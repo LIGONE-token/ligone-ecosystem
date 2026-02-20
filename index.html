@@ -1,288 +1,274 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>LIGONE Ecosystem – Live Token Dashboard</title>
+<title>LIGONE Ecosystem – Live Token Dashboard</title>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="LIGONE Ecosystem – Live Token Dashboard">
-  <meta property="og:description" content="Live On-Chain Dashboard für LIG1, LIGC & LIGX auf Polygon. Transparenz, Charts & Kaufoptionen in Echtzeit.">
-  <meta property="og:image" content="https://ligone-token.github.io/ligone-ecosystem/og-image.png">
-  <meta property="og:image:secure_url" content="https://ligone-token.github.io/ligone-ecosystem/og-image.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="627">
-  <meta property="og:image:alt" content="LIGONE Ecosystem – Live Token Dashboard mit LIG1, LIGC und LIGX">
-  <meta property="og:url" content="https://ligone-token.github.io/ligone-ecosystem/">
+<!-- SEO -->
+<meta name="description" content="Live Dashboard des LIGONE Ecosystems auf Polygon. Echtzeit-Charts, Token-Daten und Kaufoptionen für LIG1, LIGC und LIGX – transparent, on-chain und ohne Versprechen.">
+<meta name="keywords" content="LIGONE, LIG1, LIGC, LIGX, Polygon Token, Live Chart, Token kaufen, Krypto Dashboard">
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LIGONE Ecosystem – Live Token Dashboard">
-  <meta name="twitter:description" content="Alle LIG Token live. Charts, Daten & Kaufoptionen – transparent & on-chain.">
-  <meta name="twitter:image" content="https://ligone-token.github.io/ligone-ecosystem/og-image.png">
+<!-- Security / Best Practice -->
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <!-- SEO -->
-  <meta name="description" content="Live Dashboard des LIGONE Ecosystems auf Polygon. Echtzeit-Charts, Token-Daten und Kaufoptionen für LIG1, LIGC und LIGX – transparent, on-chain und ohne Versprechen.">
-  <meta name="keywords" content="LIGONE, LIG1, LIGC, LIGX, Polygon Token, Live Chart, Token kaufen, Krypto Dashboard">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="LIGONE Ecosystem – Live Token Dashboard">
+<meta property="og:description" content="Live On-Chain Dashboard für LIG1, LIGC & LIGX auf Polygon. Transparenz, Charts & Kaufoptionen in Echtzeit.">
+<meta property="og:image" content="https://ligone-token.github.io/ligone-ecosystem/og-image.png">
+<meta property="og:url" content="https://ligone-token.github.io/ligone-ecosystem/">
 
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="YRRh6jvBiPgsqxbRXpFUyRfganm4lP1V1yTXE7MvlhQ">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIGONE Ecosystem – Live Token Dashboard">
+<meta name="twitter:description" content="Alle LIG Token live. Charts, Daten & Kaufoptionen – transparent & on-chain.">
+<meta name="twitter:image" content="https://ligone-token.github.io/ligone-ecosystem/og-image.png">
 
-  <!-- Favicon / Icons -->
-  <link rel="icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+<!-- Google Verification -->
+<meta name="google-site-verification" content="YRRh6jvBiPgsqxbRXpFUyRfganm4lP1V1yTXE7MvlhQ">
 
-  <!-- Styling -->
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0e1117;
-      color: #e6e6e6;
-    }
+<!-- Icons -->
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
 
-    header {
-      padding: 32px;
-      border-bottom: 1px solid #1f2633;
-    }
+<style>
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+background:#0e1117;
+color:#e6e6e6;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+header{
+padding:32px;
+border-bottom:1px solid #1f2633;
+}
 
-    header p {
-      margin-top: 10px;
-      color: #9aa4b2;
-      max-width: 960px;
-      line-height: 1.5;
-    }
+header h1{
+margin:0;
+font-size:2rem;
+}
 
-    main {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      padding: 24px;
-    }
+header p{
+margin-top:10px;
+color:#9aa4b2;
+max-width:960px;
+line-height:1.5;
+}
 
-    section.token {
-      background: #131722;
-      border: 1px solid #1f2633;
-      border-radius: 14px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+main{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+padding:24px;
+}
 
-    section.token h2 {
-      margin: 0;
-      font-size: 1.4rem;
-    }
+section.token{
+background:#131722;
+border:1px solid #1f2633;
+border-radius:14px;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 6px 14px;
-      font-size: 0.9rem;
-    }
+section.token h2{
+margin:0;
+font-size:1.4rem;
+}
 
-    .stats div:nth-child(odd) {
-      color: #9aa4b2;
-    }
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:6px 14px;
+font-size:0.9rem;
+}
 
-    .chart iframe {
-      width: 100%;
-      height: 240px;
-      border: none;
-      border-radius: 10px;
-      background: #0e1117;
-    }
+.stats div:nth-child(odd){
+color:#9aa4b2;
+}
 
-    .actions {
-      display: flex;
-      gap: 12px;
-      margin-top: auto;
-    }
+.chart{
+min-height:240px;
+}
 
-    .actions a {
-      flex: 1;
-      text-align: center;
-      padding: 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      background: #1f2633;
-      color: #e6e6e6;
-      transition: background 0.2s ease;
-    }
+.chart iframe{
+width:100%;
+height:240px;
+border:none;
+border-radius:10px;
+background:#0e1117;
+}
 
-    .actions a:hover {
-      background: #2a3242;
-    }
+.actions{
+display:flex;
+gap:12px;
+margin-top:auto;
+}
 
-    .status {
-      font-size: 0.85rem;
-      color: #9aa4b2;
-    }
+.actions a{
+flex:1;
+text-align:center;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+font-size:0.9rem;
+background:#1f2633;
+color:#e6e6e6;
+transition:background 0.2s ease;
+}
 
-    footer {
-      padding: 24px;
-      border-top: 1px solid #1f2633;
-      font-size: 0.85rem;
-      color: #9aa4b2;
-      line-height: 1.5;
-    }
+.actions a:hover{
+background:#2a3242;
+}
 
-    @media (max-width: 1200px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.status{
+font-size:0.85rem;
+color:#9aa4b2;
+}
+
+footer{
+padding:24px;
+border-top:1px solid #1f2633;
+font-size:0.85rem;
+color:#9aa4b2;
+line-height:1.5;
+}
+
+@media (max-width:1200px){
+main{grid-template-columns:1fr;}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>LIGONE Ecosystem – Live Token Dashboard</h1>
-  <p>
-    Zentrale, transparente Übersicht über das LIGONE Token-Ökosystem auf Polygon.
-    Alle Daten stammen aus öffentlichen On-Chain-Quellen. Keine Versprechen, kein Hype.
-  </p>
+<h1>LIGONE Ecosystem – Live Token Dashboard</h1>
+<p>Zentrale, transparente Übersicht über das LIGONE Token-Ökosystem auf Polygon. Alle Daten stammen aus öffentlichen On-Chain-Quellen.</p>
 </header>
 
 <main>
 
-  <!-- LIG1 -->
-  <section class="token">
-    <h2>LIG1 – Fairness Token</h2>
-    <div class="stats">
-      <div>Preis</div><div>live</div>
-      <div>24h Änderung</div><div>live</div>
-      <div>Liquidität</div><div>live</div>
-      <div>Volumen</div><div>live</div>
-      <div>Holder</div><div>on-chain</div>
-      <div>Alter</div><div>on-chain</div>
-    </div>
-    <div class="chart">
-      <iframe src="https://www.geckoterminal.com/polygon_pos/pools/0xd6791279b261c36c1e079ece8cb05079cc5e7e38?embed=1&info=0"></iframe>
-    </div>
-    <div class="actions">
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x92B3677ae2EA7c19aa4fA56936d11be99BcaC37d&chain=polygon" target="_blank" rel="nofollow">Kaufen</a>
-      <a href="https://polygonscan.com/token/0x92B3677ae2EA7c19aa4fA56936d11be99BcaC37d" target="_blank" rel="nofollow">Explorer</a>
-    </div>
-    <div class="status">KI-Status: stabil · beobachtbar</div>
-  </section>
+<section class="token">
+<h2>LIG1 – Fairness Token</h2>
+<div class="stats">
+<div>Preis</div><div>live</div>
+<div>24h Änderung</div><div>live</div>
+<div>Liquidität</div><div>live</div>
+<div>Volumen</div><div>live</div>
+<div>Holder</div><div>on-chain</div>
+<div>Alter</div><div>on-chain</div>
+</div>
+<div class="chart">
+<iframe loading="lazy" title="LIG1 Chart" referrerpolicy="no-referrer"
+src="https://www.geckoterminal.com/polygon_pos/pools/0xd6791279b261c36c1e079ece8cb05079cc5e7e38?embed=1&info=0"></iframe>
+</div>
+<div class="actions">
+<a href="https://app.uniswap.org/#/swap?outputCurrency=0x92B3677ae2EA7c19aa4fA56936d11be99BcaC37d&chain=polygon" target="_blank" rel="nofollow noopener noreferrer">Kaufen</a>
+<a href="https://polygonscan.com/token/0x92B3677ae2EA7c19aa4fA56936d11be99BcaC37d" target="_blank" rel="nofollow noopener noreferrer">Explorer</a>
+</div>
+<div class="status">KI-Status: stabil · beobachtbar</div>
+</section>
 
-  <!-- LIGC -->
-  <section class="token">
-    <h2>LIGC – Community Token</h2>
-    <div class="stats">
-      <div>Preis</div><div>live</div>
-      <div>24h Änderung</div><div>live</div>
-      <div>Liquidität</div><div>live</div>
-      <div>Volumen</div><div>live</div>
-      <div>Holder</div><div>on-chain</div>
-      <div>Alter</div><div>on-chain</div>
-    </div>
-    <div class="chart">
-      <iframe src="https://www.geckoterminal.com/polygon_pos/pools/0x5d3816b85aa48ae1f591242186802b9d20485a3e?embed=1&info=0"></iframe>
-    </div>
-    <div class="actions">
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x4cE77230a94784a55B775Cc2c9d58Ac0939AA6eC&chain=polygon" target="_blank" rel="nofollow">Kaufen</a>
-      <a href="https://polygonscan.com/token/0x4cE77230a94784a55B775Cc2c9d58Ac0939AA6eC" target="_blank" rel="nofollow">Explorer</a>
-    </div>
-    <div class="status">KI-Status: aktiv · Marktphase</div>
-  </section>
+<section class="token">
+<h2>LIGC – Community Token</h2>
+<div class="stats">
+<div>Preis</div><div>live</div>
+<div>24h Änderung</div><div>live</div>
+<div>Liquidität</div><div>live</div>
+<div>Volumen</div><div>live</div>
+<div>Holder</div><div>on-chain</div>
+<div>Alter</div><div>on-chain</div>
+</div>
+<div class="chart">
+<iframe loading="lazy" title="LIGC Chart" referrerpolicy="no-referrer"
+src="https://www.geckoterminal.com/polygon_pos/pools/0x5d3816b85aa48ae1f591242186802b9d20485a3e?embed=1&info=0"></iframe>
+</div>
+<div class="actions">
+<a href="https://app.uniswap.org/#/swap?outputCurrency=0x4cE77230a94784a55B775Cc2c9d58Ac0939AA6eC&chain=polygon" target="_blank" rel="nofollow noopener noreferrer">Kaufen</a>
+<a href="https://polygonscan.com/token/0x4cE77230a94784a55B775Cc2c9d58Ac0939AA6eC" target="_blank" rel="nofollow noopener noreferrer">Explorer</a>
+</div>
+<div class="status">KI-Status: aktiv · Marktphase</div>
+</section>
 
-  <!-- LIGX -->
-  <section class="token">
-    <h2>LIGX – Experimental Token</h2>
-    <div class="stats">
-      <div>Preis</div><div>live</div>
-      <div>24h Änderung</div><div>live</div>
-      <div>Liquidität</div><div>live</div>
-      <div>Volumen</div><div>live</div>
-      <div>Holder</div><div>on-chain</div>
-      <div>Alter</div><div>on-chain</div>
-    </div>
-    <div class="chart">
-      <iframe src="https://www.geckoterminal.com/polygon_pos/pools/0x36273d740323a109b11ea51c715b09c47756d864?embed=1&info=0"></iframe>
-    </div>
-    <div class="actions">
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x520857182e0850cf7ff1f48ba678333cb1ef4bd8&chain=polygon" target="_blank" rel="nofollow">Kaufen</a>
-      <a href="https://polygonscan.com/token/0x520857182e0850cf7ff1f48ba678333cb1ef4bd8" target="_blank" rel="nofollow">Explorer</a>
-    </div>
-    <div class="status">KI-Status: neu · Aufbauphase</div>
-  </section>
+<section class="token">
+<h2>LIGX – Experimental Token</h2>
+<div class="stats">
+<div>Preis</div><div>live</div>
+<div>24h Änderung</div><div>live</div>
+<div>Liquidität</div><div>live</div>
+<div>Volumen</div><div>live</div>
+<div>Holder</div><div>on-chain</div>
+<div>Alter</div><div>on-chain</div>
+</div>
+<div class="chart">
+<iframe loading="lazy" title="LIGX Chart" referrerpolicy="no-referrer"
+src="https://www.geckoterminal.com/polygon_pos/pools/0x36273d740323a109b11ea51c715b09c47756d864?embed=1&info=0"></iframe>
+</div>
+<div class="actions">
+<a href="https://app.uniswap.org/#/swap?outputCurrency=0x520857182e0850cf7ff1f48ba678333cb1ef4bd8&chain=polygon" target="_blank" rel="nofollow noopener noreferrer">Kaufen</a>
+<a href="https://polygonscan.com/token/0x520857182e0850cf7ff1f48ba678333cb1ef4bd8" target="_blank" rel="nofollow noopener noreferrer">Explorer</a>
+</div>
+<div class="status">KI-Status: neu · Aufbauphase</div>
+</section>
 
 </main>
 
-  <!-- ================= COMMENTS ================= -->
-<div style="
-  max-width:720px;
-  margin:64px auto;
-  padding:24px 16px;
-  box-sizing:border-box;
-  background:#fafafa;
-  border:1px solid #e5e7eb;
-  border-radius:12px;
-">
-  <script src="https://giscus.app/client.js"
-    data-repo="ligone-token/ligone-web"
-    data-repo-id="R_kgDOQhTqTA"
-    data-category="Pages"
-    data-category-id="DIC_kwDOQhTqTM4C1sNq"
-    data-mapping="pathname"
-    data-input-position="top"
-    data-theme="light"
-    data-lang="de"
-    crossorigin="anonymous"
-    async>
-  </script>
+<!-- COMMENTS lazy load -->
+<div style="max-width:720px;margin:64px auto;padding:24px 16px;background:#fafafa;border:1px solid #e5e7eb;border-radius:12px">
+<div id="giscus-container"></div>
 </div>
-<!-- ================= /COMMENTS ================= -->
 
 <footer>
-  Netzwerk: Polygon · Alle Daten öffentlich & on-chain · Keine Anlageberatung · Transparenz & Eigenverantwortung
+Netzwerk: Polygon · Alle Daten öffentlich & on-chain · Keine Anlageberatung
 </footer>
+
+<!-- giscus delayed load -->
 <script>
-/* =====================================
-   LIGONE AFFILIATE SYSTEM – FINAL
-===================================== */
-(function () {
-
-  // 1️⃣ Affiliate aus URL lesen
-  const params = new URLSearchParams(window.location.search);
-  const ref = params.get("ref");
-
-  if (ref) {
-    localStorage.setItem("ligone_ref", ref);
-    localStorage.setItem("ligone_ref_time", Date.now());
-  }
-
-  // 2️⃣ Klick zählen (1x pro Session)
-  const activeRef = localStorage.getItem("ligone_ref");
-  if (!activeRef) return;
-
-  const clickKey = "ligone_clicks_" + activeRef;
-
-  if (!sessionStorage.getItem("ligone_counted")) {
-    const clicks = parseInt(localStorage.getItem(clickKey) || "0", 10);
-    localStorage.setItem(clickKey, clicks + 1);
-    sessionStorage.setItem("ligone_counted", "1");
-  }
-
-})();
+window.addEventListener("load",function(){
+const s=document.createElement("script");
+s.src="https://giscus.app/client.js";
+s.setAttribute("data-repo","ligone-token/ligone-web");
+s.setAttribute("data-repo-id","R_kgDOQhTqTA");
+s.setAttribute("data-category","Pages");
+s.setAttribute("data-category-id","DIC_kwDOQhTqTM4C1sNq");
+s.setAttribute("data-mapping","pathname");
+s.setAttribute("data-input-position","top");
+s.setAttribute("data-theme","light");
+s.setAttribute("data-lang","de");
+s.crossOrigin="anonymous";
+s.async=true;
+document.getElementById("giscus-container").appendChild(s);
+});
 </script>
 
+<!-- Affiliate -->
+<script>
+(function(){
+const params=new URLSearchParams(window.location.search);
+const ref=params.get("ref");
+if(ref){
+localStorage.setItem("ligone_ref",ref);
+localStorage.setItem("ligone_ref_time",Date.now());
+}
+const activeRef=localStorage.getItem("ligone_ref");
+if(!activeRef) return;
+const clickKey="ligone_clicks_"+activeRef;
+if(!sessionStorage.getItem("ligone_counted")){
+const clicks=parseInt(localStorage.getItem(clickKey)||"0",10);
+localStorage.setItem(clickKey,clicks+1);
+sessionStorage.setItem("ligone_counted","1");
+}
+})();
+</script>
 
 </body>
 </html>
