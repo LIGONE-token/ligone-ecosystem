@@ -128,7 +128,30 @@ color:#9aa4b2;
 
 @media (max-width:1200px){
 main{grid-template-columns:1fr;}
+}.ecosystem-nav{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+padding:16px 24px;
+border-bottom:1px solid #1f2633;
+background:#0e1117;
 }
+
+.ecosystem-nav a{
+padding:8px 14px;
+border-radius:8px;
+text-decoration:none;
+font-size:0.9rem;
+background:#1f2633;
+color:#e6e6e6;
+font-weight:600;
+transition:background 0.2s ease;
+}
+
+.ecosystem-nav a:hover{
+background:#2a3242;
+}
+ 
 </style>
 </head>
 
@@ -137,6 +160,20 @@ main{grid-template-columns:1fr;}
 <header>
 <h1>LIGONE Ecosystem – Live Token Dashboard</h1>
 <p>Zentrale Übersicht über LIG1, LIGC und LIGX auf Polygon. Alle Daten öffentlich on-chain.</p>
+
+ <nav class="ecosystem-nav">
+<a href="https://ligone-token.github.io/ligone-web/" target="_blank" rel="noopener noreferrer">LIGONE Web</a>
+
+<a href="https://ligone-token.github.io/ligone-monitor/" target="_blank" rel="noopener noreferrer">Monitor</a>
+
+<a href="https://ligone-token.github.io/ligone-vorsorge/" target="_blank" rel="noopener noreferrer">Vorsorge</a>
+
+<a href="https://ligone-token.github.io/marketshield/" target="_blank" rel="noopener noreferrer">MarketShield</a>
+
+<a href="https://ligone-token.github.io/humans-together/" target="_blank" rel="noopener noreferrer">Humans Together</a>
+
+<a href="https://ligone-token.github.io/freiheitswerk/" target="_blank" rel="noopener noreferrer">Freiheitswerk</a>
+</nav>
 </header>
 
 <main>
